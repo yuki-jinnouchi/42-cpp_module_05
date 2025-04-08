@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:58:06 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/04/08 12:55:48 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/09 01:08:59 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main(void) {
     b2.signForm(rrf);
     b2.executeForm(rrf);
 
-    std ::cout << "== Test of PresidentialPardonForm ==" << std::endl;
+    std ::cout << "\n== Test of PresidentialPardonForm ==" << std::endl;
     std::cout << "=== Success Cases ===" << std::endl;
     b1.signForm(ppf);
     b1.executeForm(ppf);

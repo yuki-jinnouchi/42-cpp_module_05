@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 17:28:05 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/04/08 13:01:08 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/08 20:27:21 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,10 @@ void AForm::beSigned(const Bureaucrat& bureaucrat) {
 
 bool AForm::isExecutable(const Bureaucrat& executor) const {
   if (!getIsSigned()){
-    throw AForm::FormNotExecutableException();
     throw AForm::FormNotSignedException();
   }
   if (executor.getGrade() >= _gradeToExecute) {
     throw AForm::FormNotExecutableException();
-    throw AForm::GradeTooLowException();
   }
   return true;
 }
@@ -102,7 +100,7 @@ const char* AForm::FormNotSignedException::what() const throw() {
 }
 
 const char* AForm::FormNotExecutableException::what() const throw() {
-  return "Form is not executable";
+  return "Form is not executable since the bureaucrat's grade is too low";
 }
 
 // ostream overload
