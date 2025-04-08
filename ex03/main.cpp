@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:58:06 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/04/08 13:07:45 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:07:21 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,17 @@
 /*make test*/
 
 int main(void) {
+
+  AForm* rrf = NULL;
+  AForm* ppf = NULL;
+  AForm* scf = NULL;
+
   try {
+
     Intern someRandomIntern;
 
     std::cout << "\n== Test of ShrubberyCreationForm ==" << std::endl;
     std::cout << "=== Construct ===" << std::endl;
-    AForm* rrf;
     rrf = someRandomIntern.makeForm("robotomy request", "Bender");
     Bureaucrat bender("Bender", 1);
     std::cout << "=== Execute ===" << std::endl;
@@ -33,10 +38,10 @@ int main(void) {
     bender.executeForm(*rrf);
     std::cout << "=== Destruct ===" << std::endl;
     delete rrf;
+    rrf = NULL;
 
     std::cout << "\n== Test of RobotomyRequestForm ==" << std::endl;
     std::cout << "=== Construct ===" << std::endl;
-    AForm* ppf;
     ppf = someRandomIntern.makeForm("presidential pardon", "Bender");
     Bureaucrat bender2("Bender", 1);
     std::cout << "=== Execute ===" << std::endl;
@@ -44,10 +49,10 @@ int main(void) {
     bender2.executeForm(*ppf);
     std::cout << "=== Destruct ===" << std::endl;
     delete ppf;
+    ppf = NULL;
 
     std ::cout << "\n== Test of PresidentialPardonForm ==" << std::endl;
     std::cout << "=== Construct ===" << std::endl;
-    AForm* scf;
     scf = someRandomIntern.makeForm("shrubbery creation", "Bender");
     Bureaucrat bender3("Bender", 1);
     std::cout << "=== Execute ===" << std::endl;
@@ -55,11 +60,21 @@ int main(void) {
     bender3.executeForm(*scf);
     std::cout << "=== Destruct ===" << std::endl;
     delete scf;
+    scf = NULL;
 
     std::cout << std::endl;
   }
+
   catch (std::exception &e) {
     std::cerr << e.what() << std::endl;
   }
+
+  if (rrf)
+    delete rrf;
+  if (ppf)
+    delete ppf;
+  if (scf)
+    delete scf;
+
   return 0;
 }
