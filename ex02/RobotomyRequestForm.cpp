@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:30:36 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/04/08 15:44:59 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/09 01:14:51 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
   if (!this->isExecutable(executor))
     throw AForm::GradeTooLowException();
   std::cout << "Drilling noises..." << std::endl;
+  srand(time(0));
   if (rand() % 2 == 0)
     std::cout << getTarget() << " has been robotomized successfully." << std::endl;
   else
