@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:47:14 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/04/08 12:57:35 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:52:09 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Intern& Intern::operator=(const Intern& other) {
 
 // Member Functions
 AForm* Intern::makeForm(std::string formName, std::string target) {
-  AForm* form = nullptr;
+  AForm* form = NULL;
 
   if (formName == "shrubbery creation") {
     form = new ShrubberyCreationForm(target);
