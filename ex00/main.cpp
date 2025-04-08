@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:40:59 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/04/08 12:33:51 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:00:03 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 // test of bureaucrat
 
 int main(void){
+
+  Bureaucrat *bureaucrat = NULL;
+
   try {
-    Bureaucrat *bureaucrat = new Bureaucrat("bureaucrat", 150);
+    bureaucrat = new Bureaucrat("bureaucrat", 150);
 
     // print name
     std::cout << bureaucrat->getName() << std::endl;
@@ -40,9 +43,14 @@ int main(void){
     std::cout << bureaucrat->getGrade() << std::endl;
 
     delete bureaucrat;
+    bureaucrat = NULL;
 
   } catch (std::exception &e) {
     std::cout << "Exception caught: " << e.what() << std::endl;
   }
+
+  if (bureaucrat)
+    delete bureaucrat;
+
   return 0;
 }
