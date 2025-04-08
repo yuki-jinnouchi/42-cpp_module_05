@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:30:38 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/04/08 13:00:26 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:47:34 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+
+#include <cstdlib>
 
 /*
   RobotomyRequestForm: Required grades: sign 72, exec 45

@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:30:41 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/04/08 13:00:05 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:44:18 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
   if (!this->isExecutable(executor))
     throw AForm::GradeTooLowException();
 
-  std::ofstream ofs(getTarget() + "_shrubbery");
+  std::string filename = getTarget() + "_shrubbery";
+  std::ofstream ofs(filename.c_str());
   if (!ofs.is_open()) {
     std::cerr << "Error: Could not open file." << std::endl;
     return;
