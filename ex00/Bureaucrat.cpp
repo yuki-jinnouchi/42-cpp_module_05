@@ -6,31 +6,39 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:41:45 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/03/14 17:19:04 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/08 12:13:43 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-Bureaucrat::Bureaucrat()
-  : _name("default"), _grade(150){};
 
-Bureaucrat::~Bureaucrat(){};
+// Orthodox Canonical Form
+Bureaucrat::Bureaucrat()
+    : _name("default"), _grade(150){
+    std::cout << "Bureaucrat Default constructor called" << std::endl;
+};
+
+Bureaucrat::~Bureaucrat(){
+  std::cout << "Bureaucrat Destructor called" << std::endl;
+};
 
 Bureaucrat::Bureaucrat(Bureaucrat const &srcs)
   : _name(srcs._name), _grade(srcs._grade){
-};
+  std::cout << "Bureaucrat Copy constructor called" << std::endl;
+  };
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs){
+  std::cout << "Bureaucrat Assignation operator called" << std::endl;
   if (this == &rhs)
     return *this;
   this->_grade = rhs._grade;
-  // _name is const, so we can't change it
   return *this;
 };
 
 // Optional Constructor
 Bureaucrat::Bureaucrat(std::string name, int grade)
   : _name(name), _grade(grade){
+  std::cout << "Bureaucrat Parameterized constructor called" << std::endl;
   if (grade < 1)
     throw Bureaucrat::GradeTooHighException();
   if (grade > 150)
@@ -69,7 +77,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw(){
 };
 
 // ostream overload
-std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs){
-  o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
-  return o;
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &rhs){
+  os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
+  return os;
 };

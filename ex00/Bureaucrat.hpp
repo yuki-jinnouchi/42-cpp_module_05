@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:41:58 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/03/14 17:19:28 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/08 04:05:51 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@
 
 class Bureaucrat {
   private:
+    // Private Attributes
     std::string const _name;
     int _grade;
+
   public:
     // Orthodox Canonical Form
     Bureaucrat();

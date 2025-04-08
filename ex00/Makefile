@@ -23,7 +23,8 @@ OBJECTS_DIR =		objs
 # INCLUDES =	$(wildcard $(INCLUDES_DIR)/*.hpp)
 INCLUDES =	./Bureaucrat.hpp
 # SOURCES =		$(wildcard $(SOURCES_DIR)/*.cpp)
-SOURCES =		./Bureaucrat.cpp ./main.cpp
+SOURCES =		./Bureaucrat.cpp \
+						./main.cpp
 OBJECTS =		$(patsubst $(SOURCES_DIR)/%.cpp, $(OBJECTS_DIR)/%.o, $(SOURCES))
 
 # Compiler & Flags
