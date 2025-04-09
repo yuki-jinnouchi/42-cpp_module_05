@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:58:06 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/04/09 01:08:59 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/09 23:30:48 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ int main(void) {
     // Test signing and executing forms
     std::cout << "\n= Test of Bureaucrat signing and executing forms ==" << std::endl;
 
-    std::cout << "\n== Test of ShrubberyCreationForm ==" << std::endl;
+    std ::cout << "\n== Test of PresidentialPardonForm ==" << std::endl;
     std::cout << "=== Success Cases ===" << std::endl;
-    b1.signForm(scf);
-    b1.executeForm(scf);
+    b1.signForm(ppf);
+    b1.executeForm(ppf);
     std::cout << "=== Unsuccess Cases ===" << std::endl;
-    b2.signForm(scf);
-    b2.executeForm(scf);
+    b2.signForm(ppf);
+    b2.executeForm(ppf);
 
     std::cout << "\n== Test of RobotomyRequestForm ==" << std::endl;
     std::cout << "=== Success Cases ===" << std::endl;
@@ -53,13 +53,13 @@ int main(void) {
     b2.signForm(rrf);
     b2.executeForm(rrf);
 
-    std ::cout << "\n== Test of PresidentialPardonForm ==" << std::endl;
+    std::cout << "\n== Test of ShrubberyCreationForm ==" << std::endl;
     std::cout << "=== Success Cases ===" << std::endl;
-    b1.signForm(ppf);
-    b1.executeForm(ppf);
+    b1.signForm(scf);
+    b1.executeForm(scf);
     std::cout << "=== Unsuccess Cases ===" << std::endl;
-    b2.signForm(ppf);
-    b2.executeForm(ppf);
+    b2.signForm(scf);
+    b2.executeForm(scf);
 
     std::cout << std::endl;
 

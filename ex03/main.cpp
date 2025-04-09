@@ -6,7 +6,7 @@
 /*   By: yjinnouc <yjinnouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:58:06 by yjinnouc          #+#    #+#             */
-/*   Updated: 2025/04/09 01:02:52 by yjinnouc         ###   ########.fr       */
+/*   Updated: 2025/04/09 23:32:42 by yjinnouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,15 @@
 
 int main(void) {
 
-  AForm* rrf = NULL;
   AForm* ppf = NULL;
+  AForm* rrf = NULL;
   AForm* scf = NULL;
 
   try {
 
     Intern someRandomIntern;
 
-    std::cout << "\n== Test of ShrubberyCreationForm ==" << std::endl;
-    std::cout << "=== Construct ===" << std::endl;
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-    Bureaucrat bender("Bender", 1);
-    std::cout << "=== Execute ===" << std::endl;
-    bender.signForm(*rrf);
-    bender.executeForm(*rrf);
-    std::cout << "=== Destruct ===" << std::endl;
-    delete rrf;
-    rrf = NULL;
-
-    std::cout << "\n== Test of RobotomyRequestForm ==" << std::endl;
+    std ::cout << "\n== Test of PresidentialPardonForm ==" << std::endl;
     std::cout << "=== Construct ===" << std::endl;
     ppf = someRandomIntern.makeForm("presidential pardon", "Bender");
     Bureaucrat bender2("Bender", 1);
@@ -51,7 +40,18 @@ int main(void) {
     delete ppf;
     ppf = NULL;
 
-    std ::cout << "\n== Test of PresidentialPardonForm ==" << std::endl;
+    std::cout << "\n== Test of RobotomyRequestForm ==" << std::endl;
+    std::cout << "=== Construct ===" << std::endl;
+    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    Bureaucrat bender("Bender", 1);
+    std::cout << "=== Execute ===" << std::endl;
+    bender.signForm(*rrf);
+    bender.executeForm(*rrf);
+    std::cout << "=== Destruct ===" << std::endl;
+    delete rrf;
+    rrf = NULL;
+
+    std::cout << "\n== Test of ShrubberyCreationForm ==" << std::endl;
     std::cout << "=== Construct ===" << std::endl;
     scf = someRandomIntern.makeForm("shrubbery creation", "Bender");
     Bureaucrat bender3("Bender", 1);
